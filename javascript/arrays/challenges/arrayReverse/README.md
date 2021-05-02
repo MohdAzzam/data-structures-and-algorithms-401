@@ -14,5 +14,5 @@ declare new array and add the last index to it then use for loop , O(n)
 
 ## Solution
 
-![whiteBoardReverse](../assets/arrayreverse.png)
+![whiteBoardReverse](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/array-reverse/javascript/assets/arrayreverse.png)
 

@@ -6,4 +6,4 @@
 
 | #             | Title         |
 | ------------- | ------------- |
-| 1. | [Reverse Array](javascript/arrays/challenges/arrayReverse) |
+| 1. | [Reverse Array](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/array-reverse/javascript/arrays/challenges/arrayReverse/array-reverse.js) |
