@@ -1,38 +1,55 @@
 {
-  "env": {
-    "browser": true,
-    "node": true,
-    "commonjs": true,
-    "jest": true,
-    "es6": true
-  },
   "globals": {
-    "err": true,
-    "req": true,
-    "res": true,
-    "next": true
+    "Mustache": true,
+    "$": true
   },
   "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "jquery": true,
+    "node": true
+  },
   "rules": {
-    "no-console": "off",
+    "eol-last": "error",
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
     "indent": [
       "error",
-      2
+      4
     ],
-    "quotes": [
+    "new-cap": "warn",
+    "no-console": "off",
+    "no-multi-spaces": [
+      "warn",
+      {
+        "exceptions": {
+          "VariableDeclarator": true
+        }
+      }
+    ],
+    "no-redeclare": [
       "error",
+      {
+        "builtinGlobals": true
+      }
+    ],
+    "no-template-curly-in-string": "error",
+    "no-trailing-spaces": "warn",
+    "no-undefined": "off",
+    "quotes": [
+      "warn",
       "single",
       {
         "allowTemplateLiterals": true
       }
     ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "semi": "error"
   }
 }
