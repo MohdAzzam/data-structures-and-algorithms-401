@@ -12,5 +12,5 @@ declare new array and add the last index to it then use for loop , O(n)
 
 ## Solution
 
-![whiteBoardShift](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/arrayShift/javascript/assets/arrayShift.png)
+![whiteBoardShift](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/main/javascript/assets/arrayShift.png)
 
