@@ -15,5 +15,5 @@
 
 ## Solution
 
-![Binary Search](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/array-reverse/javascript/assets/binarySearch.png)
+![Binary Search](https://github.com/MohdAzzam/data-structures-and-algorithms-401/blob/main/javascript/assets/binarySearch.png)
 
