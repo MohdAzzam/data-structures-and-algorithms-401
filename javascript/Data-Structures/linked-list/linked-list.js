@@ -6,38 +6,38 @@ class LinkedList {
     constructor() {
         this.head = null;
     }
-    insert(value){
+    insert(value) {
         let node = new Node(value);
 
-        if(this.head){ // check if the head not null
+        if (this.head) { // check if the head not null
             // we dont need to lose the value inside the head so
-            node.next=this.head; //save the node inside head into next to the new node that we create
-            this.head=node; // then sit the new node we create to the head
-        }else{
-            this.head=node;
+            node.next = this.head; //save the node inside head into next to the new node that we create
+            this.head = node; // then sit the new node we create to the head
+        } else {
+            this.head = node;
         }
         // this.head=node; without check if the head have value
-        return this ;
+        return this;
     }
-    includes(value){
-        let currentNode=this.head; //create attribute point at the head node
-        while(currentNode){
-            if(currentNode.value===value){ //check if the cuurent node value equal to the value then return true
+    includes(value) {
+        let currentNode = this.head; //create attribute point at the head node
+        while (currentNode) {
+            if (currentNode.value === value) { //check if the cuurent node value equal to the value then return true
                 return true;
-            }else{
-                currentNode=currentNode.next; // if not move to the next node
+            } else {
+                currentNode = currentNode.next; // if not move to the next node
             }
         }
         return false; // if the node value not found return false
     }
-    toString(){
-        let str=''; // createt empty string to fill the node value in it
-        let currentNode=this.head; //create attribute point at the head node
-        while(currentNode){
-            str+=`{ ${currentNode.value} } -> `;
-            currentNode=currentNode.next; // move to the next node until you reach the null
+    toString() {
+        let str = ''; // createt empty string to fill the node value in it
+        let currentNode = this.head; //create attribute point at the head node
+        while (currentNode) {
+            str += `{ ${currentNode.value} } -> `;
+            currentNode = currentNode.next; // move to the next node until you reach the null
         }
-        return str+='NULL';
+        return str += 'NULL';
     }
     append(value) {
         let node = new Node(value);
@@ -55,6 +55,45 @@ class LinkedList {
         //then add the new node to the linkedlist
         currentNode.next = node;
         return this; // to allow channing
+    }
+    insertBefore(value, newVal) {
+        let node = new Node(newVal);
+        if (this.head === null) {
+            return null;
+        }
+        let currentNode = this.head;
+        let nextNode = currentNode.next;
+        while (nextNode !== null) {
+            if (nextNode.value === value) {
+                currentNode.next = node;
+                node.next = nextNode;
+                return;
+            } else if (nextNode.next === null) {
+                return 'Exception';
+            }
+            currentNode = currentNode.next;
+            nextNode = nextNode.next;
+        }
+    }
+    insertAfter(value, newVal) {
+        let node = new Node(newVal);
+        if (this.head === null) {
+            return null;
+        }
+
+        let currentNode = this.head;
+        let lastNode = this.head.next;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                currentNode.next = node;
+                node.next = lastNode;
+                return;
+            } else if (lastNode === null) {
+                return 'Exception';
+            }
+            currentNode = currentNode.next;
+            lastNode = lastNode.next;
+        }
     }
 }
 
