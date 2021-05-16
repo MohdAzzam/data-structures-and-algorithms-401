@@ -1,6 +1,6 @@
 # Singly Linked List
 
-It's one of the LinkedList Type so it mean we have one reference to the next node.
+It's one of the LinkedList Type so it mean we have one reference to the next node. 
 
 ## Challenge
 
@@ -13,7 +13,7 @@ create three method into the class Linked List
 
 ## Approach & Efficiency
 
-two class's one for the node it self have two attrubite one for the val and the secound for the pointer called next  and another for the linked list to connect the node to each other inside the constractor there is a head to  point to the first node
+two class's one for the node it self have two attrubite one for the val and the secound for the pointer called next  and another for the linked list to connect the node to each other inside the constractor there is a head to  point to the first node 
 
 ## API
 
@@ -21,3 +21,7 @@ two class's one for the node it self have two attrubite one for the val and the 
 2. `includes` : Search if the value we recived found on our linked list.
 3. `toString` : Return the all value in our linked list as a String.
 4. `append`   : add new node to the linked list .
+5. `.insertBefore(value, newVal)` : insert befor the value that we send 
+6. `.insertAfter(value, newVal)` :insert after the value 
+   
+![image](./../../assets/linkedList.png)
