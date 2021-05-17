@@ -162,27 +162,42 @@ describe('linked list node class and LinkedList class', () => {
         list.append(2);
         expect( list.insertAfter(4, 5)).toEqual('Exception');
     });
-    it('check the Linked list kthFromEnd method if the value not in the list', () => {
+
+
+    it('check the Linked list kthFromEnd method Where k is greater than the length of the linked list', () => {
         const list = new LinkedList();
         list.insert(1);
         list.append(3);
         list.append(2);
         expect( list.kthFromEnd(5)).toEqual('Excption');
     });
-    it('check the Linked list kthFromEnd method if the value in the list', () => {
+    it('check the Linked list kthFromEnd method Where k is not a positive integer', () => {
         const list = new LinkedList();
         list.insert(1);
         list.append(3);
         list.append(2);
         list.append(5);
-        expect( list.kthFromEnd(5)).toEqual(0);
+        expect( list.kthFromEnd(-5)).toEqual('Excption');
     });
-    it('check the Linked list kthFromEnd method if the value in the list', () => {
+    it('check the Linked list kthFromEnd method Where the linked list is of a size 1', () => {
         const list = new LinkedList();
         list.insert(1);
-        list.append(3);
+        expect( list.kthFromEnd(1)).toEqual(0);
+    });
+    it('check the Linked list kthFromEnd methodWhere k and the length of the list are the same', () => {
+        const list = new LinkedList();
+        list.insert(3);
         list.append(2);
-        list.append(5);
-        expect( list.kthFromEnd(1)).toEqual(3);
+        list.append(2);
+        list.append(4);
+        expect( list.kthFromEnd(3)).toEqual(3);
+    });
+    it('check the Linked list kthFromEnd methodWhere ', () => {
+        const list = new LinkedList();
+        list.insert(3);
+        list.append(2);
+        list.append(1);
+        list.append(4);
+        expect( list.kthFromEnd(1)).toEqual(1);
     });
 });
