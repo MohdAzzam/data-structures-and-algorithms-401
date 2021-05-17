@@ -95,6 +95,26 @@ class LinkedList {
             lastNode = lastNode.next;
         }
     }
+    kthFromEnd(k) {
+        if (!this.includes(k)) return ('Excption');
+        else {
+            let count = 0;
+            let currentNode = this.head;
+            while (currentNode.next) {
+                count++;
+                currentNode = currentNode.next;
+            }
+            let count2 = 0;
+            let currentNode2 = this.head;
+            while (currentNode2.value !== k) {
+                count2++;
+                currentNode2 = currentNode2.next;
+            }
+            return count - count2;
+        }
+    }
 }
+
+
 
 module.exports = LinkedList;
