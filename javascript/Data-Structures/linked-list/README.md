@@ -24,6 +24,7 @@ two class's one for the node it self have two attrubite one for the val and the 
 5. `.insertBefore(value, newVal)` : insert befor the value that we send
 6. `.insertAfter(value, newVal)` :insert after the value
 7. `.kthFromEnd(k)` : return the index of the list reversly
-   
+8. `ziplist(list1,list2)` : return the list as ziq zag thing  
 ![image](./../../assets/linkedList.png)
 ![image](./../../assets/kthFromEnd(k).png)
+![image](../../assets/ziplist.png)

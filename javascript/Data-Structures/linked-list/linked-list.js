@@ -113,6 +113,25 @@ class LinkedList {
             return count - count2;
         }
     }
+    zipLists(list1, list2){
+        let currentNode=list1.head;
+        let currentNode2=list2.head;
+        if (currentNode === null && currentNode2===null) {
+            return null;
+        }
+        let newLinkedList=new LinkedList();
+        while(currentNode || currentNode2){
+            if(currentNode){
+                newLinkedList.append(currentNode.value);
+                currentNode=currentNode.next;
+            }
+            if(currentNode2){
+                newLinkedList.append(currentNode2.value);
+                currentNode2=currentNode2.next;
+            }
+        }
+        return newLinkedList;
+    }
 }
 
 
