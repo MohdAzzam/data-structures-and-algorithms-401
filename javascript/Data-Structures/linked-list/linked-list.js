@@ -119,18 +119,18 @@ class LinkedList {
         if (currentNode === null && currentNode2===null) {
             return null;
         }
-        let newLinkedList=new LinkedList();
+        // let newLinkedList=new LinkedList();
         while(currentNode || currentNode2){
             if(currentNode){
-                newLinkedList.append(currentNode.value);
+                this.append(currentNode.value);
                 currentNode=currentNode.next;
             }
             if(currentNode2){
-                newLinkedList.append(currentNode2.value);
+                this.append(currentNode2.value);
                 currentNode2=currentNode2.next;
             }
         }
-        return newLinkedList;
+        return this;
     }
 }
 

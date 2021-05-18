@@ -231,5 +231,17 @@ describe('linked list node class and LinkedList class', () => {
         newLinkedList = newLinkedList.zipLists(list1, list2);
         expect(newLinkedList.toString()).toEqual('{ 1 } -> { 3 } -> { 5 } -> NULL');
     });
+    it('check the Linked list zipLL method ', () => {
+        const list1 = new LinkedList();
+
+        const list2 = new LinkedList();
+        list2.insert(2);
+        list2.append(4);
+        list2.append(6);
+        let newLinkedList = new LinkedList();
+        newLinkedList = newLinkedList.zipLists(list1, list2);
+        expect(newLinkedList.toString()).toEqual('{ 2 } -> { 4 } -> { 6 } -> NULL');
+    });
+
 
 });
