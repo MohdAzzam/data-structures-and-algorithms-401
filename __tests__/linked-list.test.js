@@ -1,7 +1,7 @@
 'use strict';
 
-const LinkedList = require('../javascript/Data-Structures/linked-list/linked-list');
-const Node = require('../javascript/Data-Structures/linked-list/node');
+const LinkedList = require('../javascript/linked-list/linked-list');
+const Node = require('../javascript/linked-list/node');
 
 describe('linked list node class and LinkedList class', () => {
     it('check the node constructor', () => {
