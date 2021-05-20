@@ -15,8 +15,9 @@ class Stack {
         if (this.isEmpty()) {
             this.top = node;
         } else {
+            let pre = this.top;
             this.top = node;
-            node.next = this.top;
+            node.next = pre;
         }
         return this;
     }
@@ -76,6 +77,7 @@ class Queue {
     }
 
 }
+
 module.exports = {
     stacks: Stack,
     node: Node,
