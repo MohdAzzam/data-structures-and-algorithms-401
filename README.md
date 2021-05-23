@@ -11,4 +11,5 @@
 | 3. | [Binary Search](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/arrays/challenges/array-binary-search) |
 | 4. | [Linked List](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/linked-list)
 | 4. | [stack-and-queue ](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/stack-and-queue)
+| 5. |[stack-with-queue](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/queueWithStacks)
 
