@@ -42,6 +42,7 @@ class Stack {
         return this.top === null;
     }
 }
+let tail = null;
 class Queue {
     constructor() {
         this.front = null;
@@ -50,9 +51,16 @@ class Queue {
         let node = new Node(value);
         if (this.isEmpty()) {
             this.front = node;
-
+            tail = this.front.next;
         } else {
-            this.front.next = node;
+            if (tail) {
+                tail.next = node;
+                tail = node;
+            } else {
+                tail = node;
+                this.front.next = tail;
+            }
+
         }
         return this;
     }
