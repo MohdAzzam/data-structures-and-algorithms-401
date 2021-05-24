@@ -12,4 +12,5 @@
 | 4. | [Linked List](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/linked-list)
 | 4. | [stack-and-queue ](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/stack-and-queue)
 | 5. |[stack-with-queue](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/queueWithStacks)
+| 6. |[fifo-The-Shelter](https://github.com/MohdAzzam/data-structures-and-algorithms-401/tree/main/javascript/fifoAnimalShelter)
 
