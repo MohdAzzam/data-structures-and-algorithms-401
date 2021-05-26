@@ -15,9 +15,8 @@ class Stack {
         if (this.isEmpty()) {
             this.top = node;
         } else {
-            let pre = this.top;
-            this.top = node;
-            node.next = pre;
+            node.next = this.top;
+            this.top=node;
         }
         return this;
     }
