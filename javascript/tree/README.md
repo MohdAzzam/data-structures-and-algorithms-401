@@ -12,3 +12,11 @@ big O(n)
 ## API
 `add` to add the value to tree
 `containes` to check if the value in tree
+
+------------------------------------------
+
+`Class BinaryTree` 
+
+`findMaximumValue` find maximume value in tree 
+
+![](../assets/cc16.jpeg)
