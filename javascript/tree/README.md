@@ -19,4 +19,8 @@ big O(n)
 
 `findMaximumValue` find maximume value in tree 
 
+
+`breadth-first` return array 
 ![](../assets/cc16.jpeg)
+
+![](../assets/cc17.jpeg)
