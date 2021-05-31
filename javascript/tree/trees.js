@@ -1,5 +1,5 @@
 'use strict';
-
+const Queue = require('../stack-and-queue/stacks-and-queues').queues;
 class Node {
     constructor(value, left = null, right = null) {
         this.value = value;
@@ -56,7 +56,7 @@ class BinaryTree {
     }
     findMaximumValue() {
         let arr = this.postOrder();
-        if(arr.length >=1){
+        if (arr.length >= 1) {
             let max = 0;
             for (let i = 0; i < arr.length; i++) {
                 if (arr[i] > max) {
@@ -64,47 +64,58 @@ class BinaryTree {
                 }
             }
             return max;
-        }else{
+        } else {
             return 'No Value to check';
         }
     }
+    breadthFirst() {
+        let arr = [];
+        let queue = new Queue;
+        if(this.root ===null){
+            return [];
+        }else{
+            queue.enqueue(this.root);
+            while (queue.front) {
+                arr.push(queue.front.value.value);
+                if (queue.front.value.left) {
+                    queue.enqueue(queue.front.value.left);
+                }
+                if (queue.front.value.right) {
+                    queue.enqueue(queue.front.value.right);
+                }
+                queue.dequeue();
+            }
+
+        }
+        return arr;
+    }
 }
-// class FindMax extends BinaryTree{
-//     findMaximumValue() {
-//         let arr = this.postOrder();
-//         let max = 0;
-//         for (let i = 0; i < arr.length; i++) {
-//             if (arr[i] > max) {
-//                 max = arr[i];
-//             }
-//         }
-//         return max;
-//     }
-// }
-let one = new Node(1);
-let two = new Node(2);
-let three = new Node(3);
-let four = new Node(4);
-let five = new Node(5);
-let six = new Node(6);
-let seven = new Node(7);
-let eight = new Node(8);
-let nine = new Node(9);
 
-one.left = two;
-one.right = three;
-two.left = six;
-six.right = seven;
-seven.left = eight;
-seven.right = nine;
-three.left = four;
-three.right = five;
+// let one = new Node(1);
+// let two = new Node(2);
+// let three = new Node(3);
+// let four = new Node(4);
+// let five = new Node(5);
+// let six = new Node(6);
+// let seven = new Node(7);
+// let eight = new Node(8);
+// let nine = new Node(9);
 
-let tree = new BinaryTree(one);
-// let max = new FindMax();
+// one.left = two;
+// one.right = three;   // 1 --> 2  3 
+// two.left = six;
+// six.right = seven;
+// seven.left = eight;
+// seven.right = nine;
+// three.left = four;
+// three.right = five;
+
+// let tree = new BinaryTree(one);
+// console.log(tree.breadthFirst());
+// // let max = new FindMax();
 
 
-console.log(tree.findMaximumValue());
+// console.log(tree.findMaximumValue());
 
 class BinarySearchTree {
     constructor(root = null) {
