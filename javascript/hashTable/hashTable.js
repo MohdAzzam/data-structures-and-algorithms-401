@@ -69,7 +69,9 @@ class Hashtable {
         const hashed = this.hash(key);
         // console.log(hashed);
         let current = this.table[hashed];
-        let collesion = current.root;
+        let collesion;
+        current ? collesion = current.root : 'Null';
+        // let collesion = current.root;
         while (collesion) {
             if (collesion.value[key]) {
                 return (collesion.value[key]);
@@ -81,11 +83,17 @@ class Hashtable {
             }
         }
     }
+    getOne(key) {
+        const index = this.hash(key);
+        const element = this.table[index];
+        if (!element) return null;
+        return element.getValues(key).filter(x => x[key])[0] ? element.getValues(key).filter(x => x[key])[0][key] : 'NULL';
+    }
     contains(key) {
         let hashed = this.hash(key);
-        if(this.table[hashed]){
+        if (this.table[hashed]) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
@@ -93,4 +101,4 @@ class Hashtable {
 }
 
 
-module.exports =Hashtable;
+module.exports = Hashtable;
