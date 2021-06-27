@@ -17,16 +17,16 @@ class Graph {
         const adjacencies = this.adjacencyList.get(start);
         adjacencies.push(new Edge(end, weight));
     }
-    getNodes(){
+    getNodes() {
         let arr = new Array();
-        for(let [vertex] of this.adjacencyList.entries()){
+        for (let [vertex] of this.adjacencyList.entries()) {
             arr.push(vertex);
         }
         return arr;
     }
-    size(){
-        let count = 0 ;
-        for(let [vertex] of this.adjacencyList.values()){
+    size() {
+        let count = 0;
+        for (let [vertex] of this.adjacencyList.values()) {
             count++;
         }
         return count;
@@ -45,6 +45,26 @@ class Graph {
         }
         return this.adjacencyList.get(vertex);
     }
+    bfs(vertex) {
+        const arr = [];
+        let seen = new Set();
+        arr.push(vertex);
+        seen.add(vertex);
+
+        while (arr.length > 0) {
+            let current = arr.shift();
+            let neighbours = this.getNeighbours(current);
+            for (let ver of neighbours) {
+                let node = ver.vertex;
+                if (!seen.has(ver.vertex)) {
+                    seen.add(node);
+                    arr.push(node);
+                }
+            }
+        }
+        return seen;
+    }
 }
 
-module.exports=Graph;
+
+module.exports = Graph;

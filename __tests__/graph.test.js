@@ -100,4 +100,30 @@ describe('Graph', () => {
         const test = new Graph();
         expect(test.adjacencyList.values()).not.toBeUndefined();
     });
+    it('Test BFS ', () => {
+        let test = new Graph();
+        const pandora = new Vertex('Pandora');
+        const arendelle = new Vertex('Arendelle');
+        const metroville = new Vertex('Metroville');
+        const monstroplolis = new Vertex('Monstroplolis');
+        const narnia = new Vertex('Narnia');
+        const naboo = new Vertex('Naboo');
+        test.addVertex(pandora);
+        test.addVertex(arendelle);
+        test.addVertex(metroville);
+        test.addVertex(monstroplolis);
+        test.addVertex(narnia);
+        test.addVertex(naboo);
+        test.addDirectedEdge(pandora, arendelle, 150);
+        test.addDirectedEdge(metroville, pandora, 82);
+        test.addDirectedEdge(arendelle, metroville, 99);
+        test.addDirectedEdge(arendelle, monstroplolis, 42);
+        test.addDirectedEdge(metroville, monstroplolis, 105);
+        test.addDirectedEdge(metroville, narnia, 37);
+        test.addDirectedEdge(metroville, naboo, 26);
+        test.addDirectedEdge(monstroplolis, naboo, 73);
+        test.addDirectedEdge(narnia, naboo, 250);
+
+        expect(test.bfs(pandora).has(monstroplolis)).toBeTruthy();
+    });
 });

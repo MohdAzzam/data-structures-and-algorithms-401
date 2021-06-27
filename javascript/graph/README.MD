@@ -35,3 +35,10 @@ implement your own Graph. The graph should be represented as an adjacency list, 
 
     Arguments: none
     Returns the total number of nodes in the graph
+
+`BFS`
+
+    Arguments : vertex
+    A collection of nodes in the order they were visited
+
+
