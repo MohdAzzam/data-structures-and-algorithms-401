@@ -1,4 +1,4 @@
-const Graph = require('../javascript/graph/graph');
+const {Graph ,businessTrip} = require('../javascript/graph/graph');
 const Edge = require('../javascript/graph/edge');
 const Vertex = require('../javascript/graph/vertex');
 
@@ -9,25 +9,7 @@ const three = new Vertex(3);
 const four = new Vertex(4);
 const five = new Vertex(5);
 
-// myGraph.addVertex(zero);
-// myGraph.addVertex(one);
-// myGraph.addVertex(two);
-// myGraph.addVertex(three);
-// myGraph.addVertex(four);
-// myGraph.addVertex(five);
 
-// myGraph.addDirectedEdge(zero, two);
-// myGraph.addDirectedEdge(two, three);
-// myGraph.addDirectedEdge(two, four);
-// myGraph.addDirectedEdge(three, five);
-// myGraph.addDirectedEdge(four, five);
-// myGraph.addDirectedEdge(one, three);
-// myGraph.print();
-// console.log("-----------------")
-// console.log(myGraph.getNeighbours(two));
-// console.log("-----------------")
-// console.log(myGraph.getNeighbours(one));
-// console.log(myGraph.getNodes());
 
 
 describe('Graph', () => {
@@ -125,5 +107,34 @@ describe('Graph', () => {
         test.addDirectedEdge(narnia, naboo, 250);
 
         expect(test.bfs(pandora).has(monstroplolis)).toBeTruthy();
+    });
+    it('Test Trip Cost ', () => {
+        let test = new Graph();
+        const pandora = new Vertex('Pandora');
+        const arendelle = new Vertex('Arendelle');
+        const metroville = new Vertex('Metroville');
+        const monstroplolis = new Vertex('Monstroplolis');
+        const narnia = new Vertex('Narnia');
+        const naboo = new Vertex('Naboo');
+        test.addVertex(pandora);
+        test.addVertex(arendelle);
+        test.addVertex(metroville);
+        test.addVertex(monstroplolis);
+        test.addVertex(narnia);
+        test.addVertex(naboo);
+        test.addDirectedEdge(pandora, arendelle, 150);
+        test.addDirectedEdge(metroville, pandora, 82);
+        test.addDirectedEdge(arendelle, metroville, 99);
+        test.addDirectedEdge(arendelle, monstroplolis, 42);
+        test.addDirectedEdge(metroville, monstroplolis, 105);
+        test.addDirectedEdge(metroville, narnia, 37);
+        test.addDirectedEdge(metroville, naboo, 26);
+        test.addDirectedEdge(monstroplolis, naboo, 73);
+        test.addDirectedEdge(narnia, naboo, 250);
+
+        expect(businessTrip(test,[pandora, arendelle])).toEqual('true, $150');
+        expect(businessTrip(test,[metroville, naboo])).toEqual('true, $26');
+        expect(businessTrip(test,[arendelle, monstroplolis,naboo])).toEqual('true, $115');
+        expect(businessTrip(test,[pandora, monstroplolis])).toEqual('false, $0');
     });
 });

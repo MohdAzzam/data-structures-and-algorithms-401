@@ -42,3 +42,8 @@ implement your own Graph. The graph should be represented as an adjacency list, 
     A collection of nodes in the order they were visited
 
 
+`businessTrip`
+
+    Determine whether the trip is possible with direct flights, and how much it would cost.
+    Arguments: graph, array of city names
+    Return: cost or null.
