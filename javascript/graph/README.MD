@@ -47,3 +47,11 @@ implement your own Graph. The graph should be represented as an adjacency list, 
     Determine whether the trip is possible with direct flights, and how much it would cost.
     Arguments: graph, array of city names
     Return: cost or null.
+
+`dfs`
+
+    depth first
+    Arguments: An adjacency list as a graph
+    Return: A collection of nodes in their pre-order depth-first traversal order
+    Display the collection
+    
