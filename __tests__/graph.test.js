@@ -1,12 +1,11 @@
-const {Graph ,businessTrip} = require('../javascript/graph/graph');
+const { Graph, businessTrip, dfs } = require('../javascript/graph/graph');
 const Edge = require('../javascript/graph/edge');
 const Vertex = require('../javascript/graph/vertex');
 
 const zero = new Vertex(0);
 const one = new Vertex(1);
 const two = new Vertex(2);
-const three = new Vertex(3);
-const four = new Vertex(4);
+
 const five = new Vertex(5);
 
 
@@ -132,9 +131,41 @@ describe('Graph', () => {
         test.addDirectedEdge(monstroplolis, naboo, 73);
         test.addDirectedEdge(narnia, naboo, 250);
 
-        expect(businessTrip(test,[pandora, arendelle])).toEqual('true, $150');
-        expect(businessTrip(test,[metroville, naboo])).toEqual('true, $26');
-        expect(businessTrip(test,[arendelle, monstroplolis,naboo])).toEqual('true, $115');
-        expect(businessTrip(test,[pandora, monstroplolis])).toEqual('false, $0');
+        expect(businessTrip(test, [pandora, arendelle])).toEqual('true, $150');
+        expect(businessTrip(test, [metroville, naboo])).toEqual('true, $26');
+        expect(businessTrip(test, [arendelle, monstroplolis, naboo])).toEqual('true, $115');
+        expect(businessTrip(test, [pandora, monstroplolis])).toEqual('false, $0');
+    });
+    it('test DFS', () => {
+
+        let test = new Graph();
+        const a = new Vertex('A');
+        const b = new Vertex('B');
+        const c = new Vertex('C');
+        const d = new Vertex('D');
+        const e = new Vertex('E');
+        const f = new Vertex('F');
+        const g = new Vertex('G');
+        const h = new Vertex('H');
+        test.addVertex(a);
+        test.addVertex(b);
+        test.addVertex(c);
+        test.addVertex(d);
+        test.addVertex(e);
+        test.addVertex(f);
+        test.addVertex(g);
+        test.addVertex(h);
+        test.addDirectedEdge(a, b);
+        test.addDirectedEdge(a, d);
+        test.addDirectedEdge(b, c);
+        test.addDirectedEdge(c, g);
+        test.addDirectedEdge(b, d);
+        test.addDirectedEdge(d, e);
+        test.addDirectedEdge(d, h);
+        test.addDirectedEdge(d, f);
+        test.addDirectedEdge(h, f);
+        let value =dfs(test, a); 
+        console.log(value);
+        expect(dfs(test, a)).toEqual(value);
     });
 });

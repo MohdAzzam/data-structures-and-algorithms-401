@@ -86,5 +86,24 @@ function businessTrip(graph, cityArray) {
 
     return `${check}, $${totalCost}`;
 }
+function dfs(graph, vertex) {
+    const visitedVertices = new Set();
 
-module.exports = {Graph,businessTrip};
+    visitedVertices.add(vertex);
+    const traverse = (current, visited) => {
+
+        visited.add(current);
+
+        const neighbors = graph.getNeighbours(current);
+
+        for (let neighbor of neighbors) {
+            if (!visited.has(neighbor.vertex)) {
+                traverse(neighbor.vertex, visited);
+            }
+        }
+    };
+
+    traverse(vertex, visitedVertices);
+    return visitedVertices;
+}
+module.exports = { Graph, businessTrip ,dfs};
